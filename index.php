@@ -22,8 +22,8 @@ $db_name = "database"; // De naam van de database zelf, deze moet via de DBMS wo
 $mysqli = new mysqli($db_hostnaam, $db_user, $db_password, $db_name);
 
 //ingriendents 
-$fruits = array('mango', 'strawberry', 'banana', 'apple', 'berries'. 'forestfruit')
-$seeds = array ('flexseed', 'quina')
+$fruits = array('mango','strawberry','banana','apple','berries','forestfruit')
+$seeds = array ('flexseed','quina')
         
 
         
@@ -51,7 +51,15 @@ echo htmlentities($row["order"]);
         <?php $totalPrice += (($item['qty']>=0?$item['qty']:0) * $item['price']); ?>
     </tr>
     <?php
+    
+    $meta_id = 'id'
+    $wp_usermeta = 'user'        
+
+           
     }
+    update_metadata()
+    
+    
     ?>
 </table>
 Total price: <?php>print $totalPrice  
@@ -69,18 +77,5 @@ print 'time'
         
 
         ?>
-
-<?php 
     
-    class Fruit {
-  public $count = 3;
-  public $type;
-}
-
-$apple = new Fruit();
-$apple->type = "apple";
-print $apple->count; // 3
-print $apple->type;  // apple
-    
-?>
 </html>
